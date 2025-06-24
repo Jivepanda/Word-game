@@ -1,19 +1,33 @@
 # word game for learning python
 import random
-word_choice = ['cherry','grape', 'peach', 'plum', 'pineapple''apple', 'house', 'water', 'light', 'green', 'happy', 'child', 'music', 'river', 'stone',
-'heart', 'world', 'plant', 'table', 'night', 'laugh', 'dream', 'cloud', 'grass', 'smile',
-'phone', 'chair', 'bread', 'glass', 'floor', 'river', 'shirt', 'clock', 'bread', 'field',
-'park', 'bird', 'tree', 'road', 'shoe', 'star', 'wind', 'fish', 'ball', 'door',
-'game', 'milk', 'fire', 'king', 'queen', 'book', 'pen', 'cat', 'dog', 'car',
-'box', 'cup', 'hat', 'key', 'map', 'net', 'owl', 'pig', 'rat', 'sun',
-'top', 'van', 'web', 'yak', 'zip', 'ant', 'bee', 'cow', 'fox', 'hen',
-'jar', 'kid', 'leg', 'man', 'nut', 'owl', 'pop', 'run', 'sit', 'toy''elephant', 'mountain', 'computer', 'dinosaur', 'pineapple', 'butterfly', 'chocolate', 'adventure', 'beautiful', 'happiness',
-'pineapple', 'telephone', 'discovery', 'education', 'important', 'generation', 'knowledge', 'literature', 'mysterious', 'wonderful''sanguine', 'tenacious', 'unctuous', 'vicarious', 'whimsical',]
-AWORD = random.choice (word_choice)
+class Fruit:
+    def __init__(self):
+        self.words = ["apple", "banana", "cherry"]
+        self.name = "Fruit"
+class Animal:
+    def __init__(self):
+        self.words = ["dog", "cat", "mouse"]
+        self.name = "Animal"
+class Colour:
+    def __init__(self):
+        self.words = ["red", "blue", "green"]
+        self.name = "Colour"
+class Vehicle:
+    def __init__(self):
+        self.words = ["car", "bike", "bus"]
+        self.name = "Vehicle"
+
+# Create instances of each category
+categories = [Fruit(), Animal(), Colour(), Vehicle()]
+# Randomly select a category
+random_category = random.choice(categories)
+# Randomly select a word from the selected category
+AWORD = random.choice(random_category.words)
+
 is_active = True
 GUESSES = 2
 print(f'''Welcome to Sam's word of the day 
-You have {GUESSES} guesses today's word has {len(AWORD)} letter and starts with {AWORD[0]}.''')
+You have {GUESSES} guesses today's word has {len(AWORD)} letter and starts with {AWORD[0]} and is from the category {random_category.name}.''')
 #creating a loop for users to guess words
 UGuess = input(f'Guess the Word: ')
 while is_active:
