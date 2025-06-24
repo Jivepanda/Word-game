@@ -1,9 +1,6 @@
 # word game for learning python
 import random
 
-from jinja2.nodes import Continue
-
-
 class Fruit:
     def __init__(self):
         self.words = ["apple", "banana", "cherry"]
@@ -33,6 +30,7 @@ GUESSES = 2
 guess_count = 1
 print(f'''Welcome to Sam's word of the day 
 You have {GUESSES} guesses today's word has {len(AWORD)} letter and starts with {AWORD[0]} and is from the category {random_category.name}.''')
+
 #creating a loop for users to guess words
 
 while is_active and guess_count <= GUESSES:
